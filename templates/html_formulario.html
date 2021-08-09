@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <meta charset="UTF-8">
+        <meta author="Carolina Lechuga">
+        <meta description="Página de prueba">
+        <meta keywords="html, aplicación web">
+        <meta >
+        <title>Mi página web</title>
+        <link rel="shortcut icon" href="./static/images/favicon (2).ico" type="image/x-icon">
+        <link rel="stylesheet" href="./static/css/style2.css" type="text/css">
+    </head>
+<body>
+    <div style="background-color: #ffffff;">
+    <h1 style="text-align: center;">Formulario</h1>
+    </div>
+        <div class="fondo">
+
+
+            <div class="container" style="background-image: url('./static/images/viajar.jpg');">
+                <form action="{{url_for('guardar_producto')}}" method="post">
+                    <div style = "opacity: 0.8;">
+                        <label for="producto">Nombre del producto:</label><br>
+                        <input type="text" id="producto" name="producto" placeholder="Ingresar nombre del producto" required><br>
+                    </div>
+                    <div style = "opacity: 0.8;">
+                        <label for="precio">Precio:</label><br>
+                        <input type="text" id="precio" name="precio" placeholder="Ingresar precio del producto" required><br>
+                    </div>
+                    <div style = "opacity: 0.8;">
+                        <label for="descripcion">Descripción:</label><br>
+                        <textarea id="descripcion" name="descripcion" placeholder="Ingresar descripción del producto" required></textarea><br><br>
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+    </div>
+
+    <div style="background-color: #ffffff;">
+        <h1 class="titulo" style="text-align: center;"> Respuestas </h1>
+    </div>
+
+    <div style="background-color: #ffffff;">
+        <table>
+            <thead>
+                 <tr>
+                        <td style="background-color: #2ECC71;"> Producto </td>
+                        <td style="background-color: #2ECC71;"> Precio </td>
+                        <td style="background-color: #2ECC71;"> Descripcion </td>
+                        <td style="background-color: #2ECC71;"> Editar </td>
+                        <td style="background-color: #2ECC71;"> Eliminar </td>
+                 </tr>
+            </thead>
+            <tbody>
+            {%for producto in productos %}
+            <tr>
+                <td>{{producto.1}}</td>
+                <td>{{producto.2}}</td>
+                <td>{{producto.3}}</td>
+                <td><a href="/consultar_producto/{{producto.0}}">Editar</a></td>
+                <td><a href="/eliminar_producto/{{producto.0}}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
