@@ -10,10 +10,10 @@ app = Flask(__name__, static_url_path='/static')
 db = SQLAlchemy(app)
 conn = psycopg2.connect(
 
-    host="ec2-34-197-105-186.compute-1.amazonaws.com",
-    database="d4rpk4sfoiglj7",
-    user="nlfszitavdcnzj",
-    password="24472049d38dcbb2177d99a65cebf4b7bc2ddcd9e2c6b3552e438fca0cbf7d69"
+    host="ec2-44-196-250-191.compute-1.amazonaws.com",
+    database="d3p9pk88t555ne",
+    user="ysscidxymbivrv",
+    password="48c83df0eb76d83394fc88c1745a748dc3f0387736ea533d46735690d4f9b91e"
 )
 
 #Conexión con MySQL
@@ -41,22 +41,22 @@ def idex():
 def rejillas_html():
     return render_template("html_rejilla.html")
 
-@app.route("/boostrap")
-def boostrap():
-    return render_template("/boostrap.html")
+@app.route("/bootstrap")
+def bootstrap_html():
+    return render_template("html_bootstrap.html")
 
 @app.route("/formulario")
 def formulario_html():
     #conn = mysql.connect()
 
-    cursor = conn.cursor()
+    connectar = conn.cursor()
 
-    cursor.execute("select * from productos")
+    connectar.execute("select * from productos")
 
-    datos = cursor.fetchall()
+    datos = connectar.fetchall()
 
     print(datos)
-    cursor.close()
+    connectar.close()
 
     return render_template("html_formulario.html", productos=datos)
 
@@ -69,14 +69,14 @@ def guardar_producto():
 
     #conn = mysql.connect()
 
-    cursor = conn.cursor()
+    connectar = conn.cursor()
 
-    cursor.execute("INSERT INTO productos(producto, precio, descripcion) VALUES (%s,%s,%s)",
-                   (producto, precio, descripcion))
+    connectar.execute("INSERT INTO productos(producto, precio, descripcion) VALUES (%s,%s,%s)",
+                      (producto, precio, descripcion))
 
     conn.commit()
 
-    cursor.close()
+    connectar.close()
 
     #return "Dato insertado "+producto + " " + precio + " " + descripcion
 
@@ -86,13 +86,13 @@ def guardar_producto():
 def eliminar_producto(ID):
     #conn = mysql.connect()
 
-    cursor = conn.cursor()
+    connectar = conn.cursor()
 
-    cursor.execute("delete from productos where ID={0}".format(ID))
+    connectar.execute("delete from productos where ID={0}".format(ID))
 
     conn.commit()
 
-    cursor.close()
+    connectar.close()
 
     return redirect("/formulario")
 
@@ -100,15 +100,15 @@ def eliminar_producto(ID):
 def obtener_producto(ID):
     #conn = mysql.connect()
 
-    cursor = conn.cursor()
+    connectar = conn.cursor()
 
-    cursor.execute("select * from productos where ID= %s", (ID))
+    connectar.execute("select * from productos where ID= %s", (ID))
 
-    dato=cursor.fetchone()
+    dato=connectar.fetchone()
 
     print(dato)
 
-    cursor.close()
+    connectar.close()
 
     return render_template("form_editar_producto.html", producto=dato)
 
@@ -120,13 +120,13 @@ def editar_producto(ID):
 
     #conn = mysql.connect()
 
-    cursor = conn.cursor()
+    connectar = conn.cursor()
 
-    cursor.execute("update productos set Producto=%s, Precio=%s, Descripcion=%s where ID=%s", (producto, precio, descripcion,ID))
+    connectar.execute("update productos set Producto=%s, Precio=%s, Descripcion=%s where ID=%s", (producto, precio, descripcion, ID))
 
     conn.commit()
 
-    cursor.close()
+    connectar.close()
 
     return redirect("/formulario")
 
