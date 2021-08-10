@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00627b5a-2fb0-4297-a118-ec7abc379cf2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/2ima.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/banner5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/banner8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/html_bootstrap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
